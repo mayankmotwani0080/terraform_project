@@ -10,14 +10,17 @@ terraform {
 provider "aws" {
   region = "us-east-1"
 }
-resource "aws_ec2_host" "test" {
-  instance_type     = "t2.micro"
-  availability_zone = "us-west-2a"
-}
-  
-  
 
-# Create a VPC
 resource "aws_vpc" "example" {
   cidr_block = "10.0.0.0/16"
+}
+
+resource "aws_ec2_host" "test" {
+  ami           = "ami-0005e0cfe09cc9050"  
+  instance_type = "t2.micro"
+  availability_zone = "us-east-1a"  
+
+  tags = {
+    Name = "terraform_project"
+  }
 }
