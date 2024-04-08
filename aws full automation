@@ -1,0 +1,4 @@
+creating a secure instance
+ssh key ->> connecting to ubuntu instance
+attching security group ->> inbound rules, outbound rules
+                          
